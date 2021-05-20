@@ -29,7 +29,7 @@ let movies = [
 export const getMovies = () => movies;
 
 export const getById = (id) => {
-  const filteredPeople = movies.filter((movie) => movie.id === id);
+  const filteredMovies = movies.filter((movie) => movie.id === id);
   return filteredMovies[0];
 };
 
@@ -41,4 +41,14 @@ export const deleteMovie = (id) => {
   } else {
     return false;
   }
+};
+
+export const addMovie = (name, score) => {
+  const newMovie = {
+    id: movies.length + 1,
+    name,
+    score,
+  };
+  movies.push(newMovie);
+  return newMovie;
 };
